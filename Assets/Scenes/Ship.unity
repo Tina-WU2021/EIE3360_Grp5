@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f8d7292e0f9a5f64bb6d1f154d42b492, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 383.13593
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8d7292e0f9a5f64bb6d1f154d42b492, type: 3}
       propertyPath: m_LocalPosition.y
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8d7292e0f9a5f64bb6d1f154d42b492, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 415.90118
+      value: -220
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8d7292e0f9a5f64bb6d1f154d42b492, type: 3}
       propertyPath: m_LocalRotation.w
@@ -313,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f8d7292e0f9a5f64bb6d1f154d42b492, type: 3}
       propertyPath: m_Name
-      value: 1700&#39;s Purple Suit
+      value: Main
       objectReference: {fileID: 0}
     - target: {fileID: 6417125815936643320, guid: f8d7292e0f9a5f64bb6d1f154d42b492, type: 3}
       propertyPath: m_DirtyAABB
