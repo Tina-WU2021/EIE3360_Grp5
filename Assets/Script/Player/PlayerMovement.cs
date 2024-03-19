@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody playerRigidbody; // Reference to the player's rigid body.
     int floorMask; // A layer mask so that a ray can be cast at game objects on the floor layer.
     float camRayLength = 100f; // The length of the ray from the camera into the scene.
+    public Transform camTransform; //相机
+    public float turnSpeed = 15;//旋转速度
+    Vector3 camForward; //临时三维坐标
     void Awake()
     {
         // Create a layer mask for the floor layer.
@@ -27,14 +30,24 @@ public class PlayerMovement : MonoBehaviour
         // Animate the player.
         Animating(h, v);
     }
+
+    void Rotating(float hh, float vv)
+    {
+        camForward = Vector3.Cross(camTransform.right, Vector3.up);
+        Vector3 targetDir = camTransform.right * hh + camForward * vv;
+        Quaternion targetRotation = Quaternion.LookRotation(targetDir, Vector3.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+    }
     void Move(float h, float v)
     {
-        // Set the movement vector based on the axis input.
-        movement.Set(h, 0f, v);
-        // Normalize the movement vector and make it proportional to the speed per second.
-        movement = movement.normalized * speed * Time.deltaTime;
+        transform.Translate(camTransform.right * h * speed * Time.deltaTime + camForward * v * speed * Time.deltaTime, Space.World);
+
         // Move the player to its current position plus the movement.
         playerRigidbody.MovePosition(transform.position + movement);
+        if (h != 0 || v != 0)
+        {
+            Rotating(h, v);
+        }
     }
     void Turning()
     {
@@ -62,5 +75,6 @@ public class PlayerMovement : MonoBehaviour
         // Tell the animator whether or not the player is walking.
         
         anim.SetBool("Run", run);
+        
     }
 }
