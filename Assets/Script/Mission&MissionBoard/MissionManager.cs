@@ -48,14 +48,30 @@ public class MissionManager : MonoBehaviour
     {
         // Initialize the missions dictionary
         //The key: a short name for getting access to the dictionary
-        //Mission[0]: the text that will be displayed in the game
-        //Mission[1]: optional. true for optional, false for compulsory
-        //Mission[2]: activated. true for activated.
+        //Mission[1]: the text that will be displayed in the game
+        //Mission[2]: optional. true for optional, false for compulsory
+        //Mission[3]: activated. true for activated.
         missionsList = new Dictionary<string, Mission>
         {
-            { "Mission1", new Mission("Mission 1 testing looooooooooooooong text", false, true) },
-            { "Mission2", new Mission("Mission 2", true, false) },
-            { "Mission3", new Mission("Mission 3", true, false) }
+            {
+                "Mission1",
+                new Mission(
+                    0,
+                    "Mission 1 testing looooooooooooooong text blablablablablablablablablbla ummmmm ummmmm ummmm testing scrollable",
+                    false,
+                    false
+                )
+            },
+            {
+                "Mission2",
+                new Mission(
+                    1,
+                    "in game description for mission2 testing interface activate missions text shows at the buttom",
+                    true,
+                    true
+                )
+            },
+            { "Mission3", new Mission(2, "welcome to mission three", true, false) }
         };
     }
 
@@ -96,13 +112,15 @@ public class MissionManager : MonoBehaviour
 [Serializable]
 public class Mission
 {
-    public string missiondetail;
+    public int missionIndex;
+    public string missionDetail;
     public bool activated;
     public bool misisonIsOptional;
 
-    public Mission(string textdetail, bool optional, bool activate)
+    public Mission(int index, string textdetail, bool optional, bool activate)
     {
-        this.missiondetail = textdetail;
+        this.missionIndex = index;
+        this.missionDetail = textdetail;
         this.misisonIsOptional = optional;
         this.activated = activate;
     }

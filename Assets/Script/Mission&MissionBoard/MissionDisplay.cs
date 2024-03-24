@@ -46,30 +46,13 @@ public class MissionDisplay : MonoBehaviour
         {
             if (mission.activated)
             {
-                activatedMissionsText += mission.missiondetail + "\n";
+                activatedMissionsText += mission.missionDetail + "\n";
             }
         }
 
         // missionText.text = "Tasks:" + "\n" + activatedMissionsText;
         missionText.text = activatedMissionsText;
     }
-
-    // public void ExpandMissionMenu()
-    // {
-    //     string currentScene = SceneManager.GetActiveScene().name;
-    //     Debug.Log("currentScene" + currentScene);
-
-    //     if (currentScene != "MissionInterface")
-    //     {
-    //         // Load the MissionInterface scene since the current scene is not MissionInterface
-    //         SceneManager.LoadScene("MissionInterface", LoadSceneMode.Additive);
-    //     }
-    //     else
-    //     {
-    //         // Go back to the previous scene since the current scene is MissionInterface
-    //         SceneManager.LoadScene(previousScene, LoadSceneMode.Additive);
-    //     }
-    // }
 
     public void ExpandMissionMenu()
     {
