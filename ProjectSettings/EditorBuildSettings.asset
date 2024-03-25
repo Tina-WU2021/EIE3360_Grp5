@@ -11,4 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MissionInterface.unity
     guid: 6465aca09a00504468edb963fd1fe63b
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b23b96e9f0eae41ed87e25d3119e5f7b, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 308224a875672496dbf16e714f41bbeb, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: c30c4918dc86a46d2a4acc70c6e7ba62, type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: e358d18cad8f048a890b6b1a29058b9a, type: 2}
